@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+</head>
+<body>
+  <h1>Countdown to 43280 Hours From Now</h1>
+  <p id="timer"></p>
+
+  <script>
+    // Set target time: current time + 43280 hours (in ms)
+    const targetTime = new Date().getTime() + (43280 * 60 * 60 * 1000);
+
+    const countdown = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("timer").innerHTML = "TIME'S UP!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
