@@ -4,12 +4,12 @@
   <title>Countdown Timer</title>
 </head>
 <body>
-  <h1>Countdown to 43280 Hours From Now</h1>
+  <h1>Countdown to 29 July 2030</h1>
   <p id="timer"></p>
 
   <script>
-    // Set target time: current time + 43280 hours (in ms)
-    const targetTime = new Date().getTime() + (43280 * 60 * 60 * 1000);
+    // Set target time: July 29, 2030 at 00:00:00
+    const targetTime = new Date("July 29, 2030 00:00:00").getTime();
 
     const countdown = setInterval(function() {
       const now = new Date().getTime();
